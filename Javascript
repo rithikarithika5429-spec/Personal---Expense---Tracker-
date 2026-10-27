@@ -1,0 +1,48 @@
+function showMessage() {
+    document.getElementById("message").innerHTML =
+        "Transport information is available below.";
+}
+
+
+function findBus() {
+
+    let searchText = document
+        .getElementById("busSearch")
+        .value
+        .toLowerCase();
+
+    let result = document.getElementById("busResult");
+
+    if (searchText === "") {
+        result.innerHTML = "Please enter a bus number or pickup point.";
+    }
+
+    else if (
+        searchText.includes("201") ||
+        searchText.includes("cuddalore")
+    ) {
+        result.innerHTML =
+            "Bus 201 → Cuddalore → College | Time: 7:30 AM";
+    }
+
+    else if (
+        searchText.includes("202") ||
+        searchText.includes("sirkali")
+    ) {
+        result.innerHTML =
+            "Bus 202 → Sirkali → College | Time: 7:45 AM";
+    }
+
+    else if (
+        searchText.includes("203") ||
+        searchText.includes("kattumannarkoil")
+    ) {
+        result.innerHTML =
+            "Bus 203 → Kattumannarkoil → College | Time: 7:40 AM";
+    }
+
+    else {
+        result.innerHTML =
+            "No bus details found. Please try another search.";
+    }
+}
